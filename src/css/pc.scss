@@ -1,0 +1,361 @@
+.homePage_pc.container {
+  min-height: 446px;
+  .bv_stars_button_container{
+      text-align: center;
+  }
+  .priceToolTip{
+      font-size: 14px;
+      margin-bottom: 6px;
+      height: 17px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .tool-tip{
+          padding-right: 5px;
+          padding-bottom: 0;
+          .bubble{
+              word-break: break-word;
+              color: #000;
+              .stp-title{
+                  padding-bottom: 6.5px;
+                  border-bottom: 1px solid #CCC;
+                  font-size: 14px;
+                  font-weight: 600;
+              }
+              .stp-des{
+                  font-size: 12px;
+                  padding-top: 6.5px;
+                  font-weight: normal;
+                  font-size: 12px;
+                  line-height: 15px;
+              }
+          }
+      }
+  }
+  .tabs{
+      width: 100%;
+      height: 50px;
+      background-color: #BCBCBC;
+      text-align: center;
+      ul{
+          width: 1020px;
+          color: #000;
+          display: inline-block;
+          li{
+              float: left;
+              width: 204px;
+              height: 50px;
+              border-right: 1px solid #fff;
+              cursor: pointer;
+              padding: 0 12px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              overflow: hidden;
+              &:last-child{
+                  margin-right: 0;
+              }
+              &.active{
+                  background-color: #fff;
+                  span{
+                      color: #0D5C91;
+                      height: 50px;
+                      box-shadow: 0 -5px 0 0 inset;
+                  }
+              }
+              span{
+                  font-size: 16px;
+                  font-weight: bold;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+              }
+              &:only-child{
+                  span {
+                      font-size: 24px;
+                  }
+              }
+          }
+      }
+      &.noneBj{
+          background-color: #fff;
+          ul li{
+              text-align: left;
+          }
+      }
+  }
+  .Products{
+      width: 1018px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 13px;
+      margin-bottom: 35px;
+      min-height: 384px;
+      position: relative;
+      // overflow: hidden;
+      .Product{
+          position: relative;
+          left: 0;
+          top: 0;
+          z-index: -1;
+          opacity: 0;
+          width: 0;
+          display: flex;
+          height: 0;
+          // overflow: hidden;
+          &>li{
+              min-height: 384px;
+              width: 190px;
+              background-color: #F8F8F8;
+              margin-right: 17px;
+              float: left;
+              transition-property: opacity, transform;
+              transition-duration: 0.5s;
+              transition-delay: 0ms; 
+              &:last-child{
+                  margin-right: 0;
+              }
+              .lazy_href{
+                  // overflow: hidden;
+              }
+              &>a{
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                  .imgContainer{
+                      width: 188px;
+                      height: 168px;
+                      line-height: 168px;
+                      margin: 0 auto;
+                      text-align: center;
+                      margin-bottom: 8px;
+                      background-color: transparent;
+                      img{
+                          vertical-align: middle;
+                      }
+                  }
+                  &>.text{
+                      padding-left: 11px;
+                      padding-right: 10px;
+                      // overflow: hidden;
+                      &>p{
+                          font-size: 14px;
+                          text-align: center;
+                          margin-bottom: 6px;
+                          height: 17px;
+                          overflow: hidden;
+                          // text-overflow: ellipsis;
+                          &.name{
+                              height: auto;
+                              min-height: 22px;
+                              line-height: 22px;
+                              font-size: 16px;
+                              font-weight: 900;
+                              margin-bottom: 3px;
+                              overflow: hidden;
+                          }
+                          
+                          &.statusMsg{
+                              box-sizing: content-box;
+                              height: 48px;
+                              padding-top: 23px;
+                              margin-bottom: 6px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              font-size: 18px;
+                              font-weight: bold;
+                              letter-spacing: 0;
+                              line-height: 16px;
+                              &.comingSoon{
+                                  color: #0D5C91;
+                              }
+                              .comingSoonIcon {
+                                  height: 35px;
+                                  width: 35px;
+                                  margin-right: 5px;
+                                  background-color: #0D5C91;
+                                  background: url(//p1-ofp.static.pub/fes/cms/2021/05/11/9av9ivp0s0nunz5wshbn3iirh0gvg9297047.svg) no-repeat;
+                                  background-size: cover;
+                                  background-position: center;
+                                  flex: none;
+                              }
+                          }
+                          &.webPrice{
+                              text-decoration: line-through;
+                          }
+                          &.price{
+                              font-size: 21px;
+                              font-weight: 900;
+                              height: 25px;
+                              margin-bottom: 0;
+                          }
+                      }
+                      .introduce{
+                          text-align: center;
+                          font-size: 14px;
+                          line-height: 17px;
+                          // display: flex;
+                          // align-items: center;
+                          // justify-content: center;
+                          // max-height: 51px;
+                          margin-bottom: 6px;
+                          word-break: break-word;
+                          overflow: hidden;
+                          *{
+                              font-size: 14px;
+                              line-height: 17px;
+                          }
+                      }
+                      .rating_list{
+                          min-height: 23px;
+                          .bv_main_container {
+                              justify-content: center;
+                          }
+                          .bv_averageRating_component_container,.bv_numReviews_component_container {
+                              display: none;
+                          }
+                      }
+                      .stars{
+                          height: 22px;
+                          margin-bottom: 12px;
+                      }
+                  }
+                  .finance-option{
+                      margin-bottom: 14.59px;
+                      padding: 0 8px;
+                  }
+              }
+              .productImg{
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: contain;
+              }
+              &.merch{
+                  .gamingImage{
+                      height: 132px;
+                      margin-bottom: 24px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                  }
+                  .logoImage{
+                      width: 100%;
+                      height: 45px;
+                      padding-bottom: 27px;
+                      border-bottom: 1px solid #000;
+                      margin: 0 auto;
+                      margin-bottom: 17px;
+                      box-sizing: content-box;
+                  }
+                  .merchText{
+                      padding: 0 12px;
+                  }
+                  .text{
+                      // height: 46px;
+                      overflow: hidden;
+                      color: #000000;
+                      margin-bottom: 15px;
+                      text-align: center;
+                      .merchTitle{
+                          // height: 46px;
+                          height: auto;
+                          font-size: 18px;
+                          font-weight: bold;
+                          line-height: 22px;
+                          margin-bottom: 15px;
+                      }
+                      .desc{
+                          height: 81px;
+                          font-size: 14px;
+                          line-height: 18px;
+                      }
+                  }
+              }
+          }  
+          &.active{
+              display: flex;
+              z-index: 1;
+              opacity: 1;
+              width: 1018px;
+              height: auto;
+              li.fadeIn{
+                  // transform: scale(1);  
+                  // opacity: 1;
+              }
+          } 
+      }
+  }
+}
+
+@media screen and (min-width:1920px){
+  .homePage_pc.container {
+      min-width: 1920px;
+      .tabs{
+          ul{
+              width: 1530px;
+              li{
+                  width: 306px;
+                  height: 50px;
+                  &.active{
+                      span{
+                          height: 49px;
+                      }
+                  }
+              }
+          }
+      }
+      .Products{
+          min-height: 390px;
+          width: 1524px;
+          overflow: hidden;
+          .Product{
+              width: 1524px;
+              li{
+                  min-height: 390px;
+                  width: 289px;
+                  margin-right: 18px;
+                  a{
+                      .imgContainer{
+                          width: 285px;
+                          height: 255px;
+                      }
+                      .text{
+                          p{
+                              &.webPrice{
+                                  text-decoration: line-through;
+                              }
+                              &.introduce{
+                                  // max-height: 34px;
+                                  line-height: 17px;
+                              }
+                              &.statusMsg{
+                                  font-size: 20px;
+                              }
+                             
+                          }
+                      }
+                      .finance-option{
+                          margin-bottom: 23px;
+                          padding: 0 8px;
+                      }
+                  }
+                  &.merch{
+                      .gamingImage{
+                          height: 219px;
+                          line-height: 219px;
+                      }
+                      .logoImage{
+                          width: 190px;
+                          height: 37px;
+                      }
+
+                  }
+              }   
+          }
+      }
+  }
+}
+

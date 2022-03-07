@@ -1,0 +1,202 @@
+.homePage_mobile.container {
+  margin: 0 auto;
+  padding-bottom: 29px;
+  .priceToolTip{
+      font-size: 14px;
+      margin-bottom: 6px;
+      height: 17px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .tool-tip{
+          padding-right: 5px;
+          padding-bottom: 0;
+          .bubble{
+              word-break: break-word;
+              color: #000;
+              .stp-title{
+                  padding-bottom: 6.5px;
+                  border-bottom: 1px solid #CCC;
+                  font-size: 14px;
+                  font-weight: 600;
+              }
+              .stp-des{
+                  font-size: 12px;
+                  padding-top: 6.5px;
+                  font-weight: normal;
+                  font-size: 12px;
+                  line-height: 15px;
+              }
+          }
+      }
+  }
+  .Products{
+      text-align: center;
+      min-height: 300px;
+      .title{
+          font-size: 16px;
+          font-weight: 900;
+          text-align: left;
+          height: 47px;
+          line-height: 47px;
+          padding-left: 20px;
+          padding-right: 20px;
+      }
+      .Product{
+          font-size: 0;
+          color: #000;
+          word-break: break-all;
+          white-space: nowrap;
+          overflow-x: scroll;
+          display: flex;
+          overflow-y: hidden;
+          &>li{
+              font-size: 12px;
+              width: 165px;
+              flex: none;
+              min-height: 300px;
+              margin-right: 8px;
+              display: inline-block;
+              white-space: normal;
+              background-color: #F8F8F8;
+              &:last-child{
+                  margin-right: 0;
+              }
+              .lazy_href{
+                  overflow: hidden;
+              }
+              &>a{  
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                  .imgContainer{
+                      width: 165px;
+                      height: 147px;
+                      line-height: 147px;
+                      margin: 0 auto;
+                      text-align: center;
+                      background-color: transparent;
+                      img{
+                          vertical-align: middle;
+                      }
+                  }
+                  .productImg{
+                      background-repeat: no-repeat;
+                      background-position: center;
+                      background-size: contain;
+                  }
+                  .gamingImage{
+                      align-items: flex-start;
+                      height: 147px;
+                  }
+                  .logoImage{
+                      height: auto;
+                      max-height: 50px;
+                      padding: 30px 0;
+                      margin-bottom: 15px;
+                      border-bottom: 1px solid #000;
+                      box-sizing: content-box;
+                  }
+                  .text{
+                      // overflow: hidden;
+                      &>p{
+                          font-size: 12px;
+                          line-height: 15px;
+                          height: 15px;
+                          overflow: hidden;
+                          text-align: center;
+                          word-break: keep-all;
+                          text-overflow: ellipsis;
+                          &.name,&.merchTitle{
+                              height: auto;
+                              min-height: 17px;
+                              line-height: 17px;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              font-size: 14px;
+                              font-weight: 900;
+                              margin-bottom: 3px;
+                          }
+                          
+                          &.statusMsg{
+                              box-sizing: content-box;
+                              height: 48px;
+                              padding-top: 23px;
+                              margin-bottom: 6px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              font-size: 18px;
+                              font-weight: bold;
+                              letter-spacing: 0;
+                              line-height: 16px;
+                              &.comingSoon{
+                                  color: #0D5C91;
+                              }
+                              .comingSoonIcon {
+                                  height: 35px;
+                                  width: 35px;
+                                  margin-right: 5px;
+                                  background-color: #0D5C91;
+                                  background: url(//p1-ofp.static.pub/fes/cms/2021/05/11/9av9ivp0s0nunz5wshbn3iirh0gvg9297047.svg) no-repeat;
+                                  background-size: cover;
+                                  background-position: center;
+                                  flex: none;
+                              }
+                          }
+                          &.webPrice{
+                              text-decoration: line-through;
+                          }
+                          &.price{
+                              font-size: 21px;
+                              font-weight: 900;
+                              line-height: 25px;
+                              height: 25px;
+                          }
+                      }
+                      .introduce{
+                          padding-left: 4px;
+                          padding-right: 3px;
+                          // max-height: 42px;
+                          font-size: 12px;
+                          line-height: 14px;
+                          word-break: break-word;
+                          // display: flex;
+                          // align-items: center;
+                          // justify-content: center;
+                          text-align: center;
+                          overflow: hidden;
+                          *{
+                              font-size: 12px;
+                              line-height: 14px;
+                          }
+                      }
+                      .desc {
+                          word-break: break-word;
+                          padding-left: 4px;
+                          padding-right: 3px;
+                      }
+                      .rating_list{
+                          min-height: 23px;
+                          height: 23px;
+                          .bv_main_container {
+                              justify-content: center;
+                          }
+                          .bv_averageRating_component_container,.bv_numReviews_component_container {
+                              display: none;
+                          }
+                      }
+                      .stars{
+                          height: 15px;
+                          margin-bottom: 6px;
+                      }
+                  }
+                  .finance-option{
+                      margin-bottom: 13px;
+                      padding: 0 8px;
+                  }
+              }
+          }   
+      }
+  }
+}
