@@ -6,6 +6,7 @@ import Merchandising from "./merchandising.js";
 
 class Engine{
     constructor(){
+        this._terminal  = __TERMINAL__;
         this._merchandisings = [];
     }
 
