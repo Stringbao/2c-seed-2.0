@@ -1,20 +1,29 @@
 
 
-import View from "@view/baseview";
-
 let Services = {
     createView(){
         return ;
     },
-    getFeaturePrice(merchandisings, pns){
-        http.get(pns).then(x=>{
-            for (let index = 0; index < merchandisings.length; index++) {
-                const item = merchandisings[index];
-                if(x[item._product.productNumber]){
-                    this.createView().updateFP(item._el, data);
-                }
-            }
+    geMiniCartData(engine, idx){
+        return new Promise((resolve, reject)=>{
+            engine._paging.setData({});
+            engine._paging.updateIdx(idx);
+            engine._productList.setData({});
+            engine._summary.setData({});
+            resolve();
         })
+    },
+    showContentByData(flag,contentContainer, emptyContainer){
+        if(flag){
+            $(contentContainer).show();
+            $(emptyContainer).hide();
+        }else{
+            $(contentContainer).hide();
+            $(emptyContainer).show();
+        }
+    },
+    splitGroup(data, count){
+        return flash_fe_core_tool.$util.$array.chunk(data, count);
     }
 }
 

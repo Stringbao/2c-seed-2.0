@@ -35,7 +35,7 @@ module.exports = {
             "@css": path.resolve(__dirname,'../src/css'),
             "@services": path.resolve(__dirname,"../src/main/services"),
             "@view": path.resolve(__dirname,"../src/main/view"),
-            "@modules": path.resolve(__dirname,"../src/main/modules"),
+            "@model": path.resolve(__dirname,"../src/main/model"),
             "@helper": path.resolve(__dirname,"../src/main/helper"),
             "@src": path.resolve(__dirname,"../src")
         },

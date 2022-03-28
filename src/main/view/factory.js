@@ -1,34 +1,70 @@
 //如果 PC mobile  tablet公用一套view，只需在声明的时候指向一个view即可
 
 /*********************  Recommendation *********************************/
-import RecommendationPC from "@view/recommendation/pc.js";
-import RecommendationMobile from "@view/recommendation/mobile.js";
-import RecommendationTablet from "@view/recommendation/tablet.js";
+import PagingPC from "@view/paging/pc.js";
+import PagingMobile from "@view/paging/mobile.js";
+import PagingTablet from "@view/paging/tablet.js";
+import ProductListPC from "@view/paging/pc.js";
+import ProductListMobile from "@view/paging/mobile.js";
+import ProductListTablet from "@view/paging/tablet.js";
+
+import ProductItemPC from "@view/productItem/pc.js";
+import ProductItemMobile from "@view/productItem/mobile.js";
+import ProductItemTablet from "@view/productItem/tablet.js";
+
+import SummaryPC from "@view/paging/pc.js";
+import SummaryMobile from "@view/paging/mobile.js";
+import SummaryTablet from "@view/paging/tablet.js";
+
+import EmptyPC from "@view/empty/tablet.js";
+import EmptyMobile from "@view/empty/tablet.js";
+import EmptyTablet from "@view/empty/tablet.js";
 
 export default class ViewFactory{
     constructor(){
         
     }
-    create(type, terminal){
+
+    static getTerminal(){
+        return typeof(__TERMINAL__) == 'undefined'?__TERMINAL__:"1";
+    }
+
+    create(type, model, container){
         if(this.__proto__.hasOwnProperty(type) && typeof(this.__proto__[type]) == "function"){
-            return this.__proto__[type].call(this, terminal);
+            return this.__proto__[type].call(this, model, container);
         }
         return null;
     }
-    createByType(terminal, pcClassName, mobileClassName, tabletClassName){
-        let obj = new pcClassName();
-        switch(terminal){
+    createByType(pcClassName, mobileClassName, tabletClassName, model, container){
+        let obj = new pcClassName(model, container);
+        switch(ViewFactory.getTerminal()){
             case $CONSTANT.TERMINAL.MOBILE:
-                obj = new mobileClassName();
+                obj = new mobileClassName(model, container);
                 break;
             case $CONSTANT.TERMINAL.TABLET:
-                obj = new tabletClassName();
+                obj = new tabletClassName(model, container);
                 break;
         }
         return obj;
     }
 }
 
-ViewFactory.prototype[$MAP.MODEL_TYPES.MERCHANDISING.TYPE] = function(terminal){
-    return this.createByType(terminal, RecommendationPC, RecommendationMobile, RecommendationTablet);
+ViewFactory.prototype[$MAP.MODEL_TYPES.PAGING.TYPE] = function(model,container){
+    return this.createByType(PagingPC, PagingMobile, PagingTablet, model, container);
 }
+
+ViewFactory.prototype[$MAP.MODEL_TYPES.PRODUCT_LIST.TYPE] = function(model, container){
+    return this.createByType(ProductListPC, ProductListMobile, ProductListTablet, model, container);
+}
+
+ViewFactory.prototype[$MAP.MODEL_TYPES.SUMMARY.TYPE] = function(model, container){
+    return this.createByType(SummaryPC, SummaryMobile, SummaryTablet, model, container);
+}
+
+ViewFactory.prototype[$MAP.MODEL_TYPES.EMPTY.TYPE] = function(model, container){
+    return this.createByType(EmptyPC, EmptyMobile, EmptyTablet, model, container);
+}
+ViewFactory.prototype[$MAP.MODEL_TYPES.PRODUCT_ITEM.TYPE] = function(model, container){
+    return this.createByType(ProductItemPC, ProductItemMobile, ProductItemTablet, model, container);
+}
+
