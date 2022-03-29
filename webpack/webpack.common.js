@@ -37,7 +37,9 @@ module.exports = {
             "@view": path.resolve(__dirname,"../src/main/view"),
             "@model": path.resolve(__dirname,"../src/main/model"),
             "@helper": path.resolve(__dirname,"../src/main/helper"),
-            "@src": path.resolve(__dirname,"../src")
+            "@src": path.resolve(__dirname,"../src"),
+            "@api": path.resolve(__dirname,"../src/main/api"),
+            "@constant": path.resolve(__dirname,"../src/constant")
         },
         extensions: ['.js','.json']
     },

@@ -1,19 +1,10 @@
 export default {
     MODEL_TYPES:{
-        PAGING:{
-            TYPE:"paging"
+        LIST:{
+            TYPE:"list"
         },
-        PRODUCT_LIST:{
-            TYPE:"productlist"
-        },
-        PRODUCT_ITEM:{
-            TYPE:"productitem"
-        },
-        SUMMARY:{
-            TYPE:"summary"
-        },
-        EMPTY:{
-            TYPE:"empty"
+        ITEM:{
+            TYPE:"item"
         }
     }
 }

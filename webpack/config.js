@@ -10,9 +10,9 @@ let componentList = [
         library: 'login_pc',
         componentName: 'ofp-Login',
         list: [
-            {terminal:'pc',chunksName: 'pc',entry: './src/entry/pc.js'},
-            {terminal:'tablet',chunksName: 'tablet',entry: './src/entry/tablet.js'},
-            {terminal:'mobile',chunksName: 'mobile',entry: './src/entry/mobile.js'}
+            {terminal:'pc',chunksName: 'pc',entry: './src/dev/entry/pc.js'},
+            {terminal:'tablet',chunksName: 'tablet',entry: './src/dev/entry/tablet.js'},
+            {terminal:'mobile',chunksName: 'mobile',entry: './src/dev/entry/mobile.js'}
         ]
     }
 ]

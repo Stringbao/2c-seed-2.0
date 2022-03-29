@@ -28,7 +28,7 @@ module.exports = merge(common,{
         }),
         new HtmlWebpackPlugin({
             filename: "pc.html",
-            template: "./src/html/pc.html",
+            template: "./src/dev/html/pc.html",
             chunks: ["pc", "runtime", "vendors"],
             inject: true,
             mode: argv.mode,
@@ -36,7 +36,7 @@ module.exports = merge(common,{
         }),
         new HtmlWebpackPlugin({
             filename: "mobile.html",
-            template: "./src/html/mobile.html",
+            template: "./src/dev/html/mobile.html",
             chunks: ["mobile", "runtime", "vendors"],
             inject: true,
             mode: argv.mode,
@@ -44,7 +44,7 @@ module.exports = merge(common,{
         }),
         new HtmlWebpackPlugin({
             filename: "tablet.html",
-            template: "./src/html/tablet.html",
+            template: "./src/dev/html/tablet.html",
             chunks: ["tablet", "runtime", "vendors"],
             inject: true,
             mode: argv.mode,
@@ -52,7 +52,7 @@ module.exports = merge(common,{
         }),
         new webpack.HotModuleReplacementPlugin(),
         new SSICompileWebpackPlugin({
-            remoteBasePath:"https://h1-ofp.lenovouat.com",
+            remoteBasePath:"https://j1-ofp.lenovouat.com",
             minify: false
         })
     ],
