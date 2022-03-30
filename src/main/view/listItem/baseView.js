@@ -26,7 +26,7 @@ class BaseView {
     }
 
     addEventListeners(){
-        $(this._el).on("click", "span[tag=detail]", ()=>{
+        $DOM_EVENT_CENTER.register(this._el, "click", "span[tag=detail]", ()=>{
             flash_fe_core_tool.$event_publisher.broadcast($MAP.EVENT_KEY.DETAIL, this._model);
         })
     }
