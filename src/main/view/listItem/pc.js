@@ -2,8 +2,8 @@
 
 import BaseView from "./baseView";
 class ItemPC extends BaseView{
-    constructor(model, rootContainer){
-        super(model, rootContainer);
+    constructor(model){
+        super(model);
     }
 }
 

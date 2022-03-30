@@ -4,7 +4,7 @@ import ViewFactory from "@view/factory";
 class BaseView {
     constructor(model){
         this._model = model;
-        this._el = $(_demoEngine._rootContainer).find("div.list_container");;
+        this._el = $(_demoEngine._rootContainer).find("div.list_container");
     }
 
     init(){
@@ -14,17 +14,13 @@ class BaseView {
 
     render(){
         this._model._items.forEach(x => {
-            debugger
-            let _itemView = new ViewFactory().create($MAP.MODEL_TYPES.ITEM.TYPE, x);
-            _itemView.renderInList(this._el);
+            let _itemView = new ViewFactory().create($MAP.MODEL_TYPES.LIST_ITEM.TYPE, x);
+            _itemView.init(this._el);
         });
     }
 
     addEventListeners(){
-        let that = this;
-        $(this._el).on("click", "div.next", function(){
-            
-        })
+        
     }
 }
 

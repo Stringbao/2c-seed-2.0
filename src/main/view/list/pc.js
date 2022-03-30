@@ -2,8 +2,8 @@
 
 import BaseView from "./baseView";
 class ListPC extends BaseView{
-    constructor(model, rootContainer){
-        super(model, rootContainer);
+    constructor(model){
+        super(model);
     }
 }
 

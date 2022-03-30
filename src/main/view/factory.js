@@ -5,9 +5,13 @@ import ListPC from "@view/list/pc.js";
 import ListMobile from "@view/list/mobile.js";
 import ListTablet from "@view/list/tablet.js";
 
-import ItemPC from "@view/item/pc.js";
-import ItemMobile from "@view/item/mobile.js";
-import ItemTablet from "@view/item/tablet.js";
+import ListItemPC from "@view/listitem/pc.js";
+import ListItemMobile from "@view/listitem/mobile.js";
+import ListItemTablet from "@view/listitem/tablet.js";
+
+import InfoPC from "@view/info/pc.js";
+import InfoMobile from "@view/info/mobile.js";
+import InfoTablet from "@view/info/tablet.js";
 export default class ViewFactory{
     constructor(){
         
@@ -40,6 +44,9 @@ export default class ViewFactory{
 ViewFactory.prototype[$MAP.MODEL_TYPES.LIST.TYPE] = function(model){
     return this.createByType(ListPC, ListMobile, ListTablet, model);
 }
-ViewFactory.prototype[$MAP.MODEL_TYPES.ITEM.TYPE] = function(model){
-    return this.createByType(ItemPC, ItemMobile, ItemTablet, model);
+ViewFactory.prototype[$MAP.MODEL_TYPES.LIST_ITEM.TYPE] = function(model){
+    return this.createByType(ListItemPC, ListItemMobile, ListItemTablet, model);
+}
+ViewFactory.prototype[$MAP.MODEL_TYPES.INFO.TYPE] = function(model){
+    return this.createByType(InfoPC, InfoMobile, InfoTablet, model);
 }

@@ -10,7 +10,10 @@ class Engine{
     }
 
     notify(){
-        
+        flash_fe_core_tool.$event_publisher.on($MAP.EVENT_KEY.DETAIL, (model)=>{
+            this._infoView._model.update(model._data);
+            this._infoView.render();
+        });
     }
 
     init(rootContainer){
@@ -24,19 +27,16 @@ class Engine{
     }
 
     readyToRender(){
-        Services.getData(this).then(x=>{
-            debugger
+        Services.getData(this).then(()=>{
             let defaultItem = Services.getDefaultItem(this._list);
             this._listView = new ViewFactory().create($MAP.MODEL_TYPES.LIST.TYPE, this._list);
-            this._itemView = new ViewFactory().create($MAP.MODEL_TYPES.ITEM.TYPE, defaultItem);
-
+            this._infoView = new ViewFactory().create($MAP.MODEL_TYPES.INFO.TYPE, defaultItem);
             this._listView.init();
-            this._itemView.init();
+            this._infoView.init();
             
             this.notify();
         }).catch(err=>{
-            
-            console.log("get data error");
+            console.log(err, "get data error");
         })
     }
 }

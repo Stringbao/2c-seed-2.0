@@ -1,9 +1,9 @@
 
 import BaseView from "./baseView";
-class ListMobile extends BaseView{
+class InfoMobile extends BaseView{
     constructor(model){
         super(model);
     }
 }
 
-export default ListMobile;
+export default InfoMobile;

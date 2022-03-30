@@ -10,6 +10,10 @@ class Item{
         this._data = data;
         this._parent = parent;
     }
+
+    update(data){
+        this._data = flash_fe_core_tool.$util.$obj.clone(data);
+    }
 }
 
 export default Item;

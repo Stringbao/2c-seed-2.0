@@ -3,8 +3,14 @@ export default {
         LIST:{
             TYPE:"list"
         },
-        ITEM:{
-            TYPE:"item"
+        LIST_ITEM:{
+            TYPE:"listitem"
+        },
+        INFO:{
+            TYPE:"info"
         }
+    },
+    EVENT_KEY:{
+        DETAIL:"detail"
     }
 }
