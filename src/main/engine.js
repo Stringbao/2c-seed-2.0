@@ -11,7 +11,7 @@ class Engine{
 
     notify(){
         flash_fe_core_tool.$event_publisher.on($MAP.EVENT_KEY.DETAIL, (model)=>{
-            this._infoView._model.update(model._data);
+            this._info.update(model._data);
             this._infoView.render();
         });
     }
@@ -24,13 +24,13 @@ class Engine{
     initModel(data){
         this._list = new List();
         this._list.setData(data);
+        this._info = Services.getDefaultItem(this._list);
     }
 
     readyToRender(){
         Services.getData(this).then(()=>{
-            let defaultItem = Services.getDefaultItem(this._list);
             this._listView = new ViewFactory().create($MAP.MODEL_TYPES.LIST.TYPE, this._list);
-            this._infoView = new ViewFactory().create($MAP.MODEL_TYPES.INFO.TYPE, defaultItem);
+            this._infoView = new ViewFactory().create($MAP.MODEL_TYPES.INFO.TYPE, this._info);
             this._listView.init();
             this._infoView.init();
             
