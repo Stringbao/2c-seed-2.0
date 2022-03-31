@@ -18,7 +18,7 @@ export default class ViewFactory{
     }
 
     static getTerminal(){
-        return typeof(__TERMINAL__) == 'undefined'?__TERMINAL__:"1";
+        return typeof(__TERMINAL__) == 'undefined'?"1":__TERMINAL__;
     }
 
     create(type, model){
