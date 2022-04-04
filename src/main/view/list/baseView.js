@@ -5,6 +5,11 @@ class BaseView {
     constructor(model){
         this._model = model;
         this._el = $(_demoEngine._rootContainer).find("div.list_container");
+        this._itemsView = [];
+    }
+
+    add(itemView){
+        this._itemsView.push(itemView);
     }
 
     init(){
@@ -13,9 +18,8 @@ class BaseView {
     }
 
     render(){
-        this._model._items.forEach(x => {
-            let _itemView = new ViewFactory().create($MAP.MODEL_TYPES.LIST_ITEM.TYPE, x);
-            _itemView.init(this._el);
+        this._itemsView.forEach(x => {
+            x.init(this._el);
         });
     }
 

@@ -2,7 +2,6 @@
 
 import Services from "@services/index.js";
 import ViewFactory from "@view/factory";
-import List from "@model/list";
 
 class Engine{
     constructor(){
@@ -22,15 +21,15 @@ class Engine{
     }
 
     initModel(data){
-        this._list = new List();
-        this._list.setData(data);
+        this._list = $Injector.use("List", data);
         this._info = Services.getDefaultItem(this._list);
     }
 
     readyToRender(){
         Services.getData(this).then(()=>{
-            this._listView = new ViewFactory().create($MAP.MODEL_TYPES.LIST.TYPE, this._list);
-            this._infoView = new ViewFactory().create($MAP.MODEL_TYPES.INFO.TYPE, this._info);
+            this._listView = $Injector.use("ListView", this._list);
+            this._infoView = $Injector.use("InfoView", this._info);
+
             this._listView.init();
             this._infoView.init();
             
