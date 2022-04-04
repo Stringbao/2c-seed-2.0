@@ -1,6 +1,4 @@
 
-import ViewFactory from "@view/factory";
-
 class BaseView {
     constructor(model){
         this._model = model;

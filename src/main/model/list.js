@@ -1,6 +1,4 @@
 
-import Item from "@model/item";
-
 class List{
     constructor(data){
         this._data = data;
