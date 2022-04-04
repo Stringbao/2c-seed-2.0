@@ -5,11 +5,12 @@ class BaseView {
     constructor(model){
         this._model = model;
         this._el = $(_demoEngine._rootContainer).find("div.list_container");
-        this._itemsView = [];
+        this._itemsViews = [];
     }
 
     add(itemView){
-        this._itemsView.push(itemView);
+        itemView._parent = this;
+        this._itemsViews.push(itemView);
     }
 
     init(){
@@ -18,7 +19,7 @@ class BaseView {
     }
 
     render(){
-        this._itemsView.forEach(x => {
+        this._itemsViews.forEach(x => {
             x.init(this._el);
         });
     }
