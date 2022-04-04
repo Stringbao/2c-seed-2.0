@@ -1,14 +1,12 @@
 
 import $rootInjector from "./injector";
 import ViewFactory from "@view/factory";
-
-import List from "@model/list";
-import ListItem from "@model/item";
+import ModelFactory from "@model/factory";
 
 const IOCConfig = {
     init(){
         $rootInjector.register($MAP.TYPES.MODEL.LIST.TYPE, (...args)=>{
-            let list = new List(...args);
+            let list = new ModelFactory().create($MAP.TYPES.MODEL.LIST.TYPE, ...args);
             list._data.forEach(x => {
                 let item = $rootInjector.use($MAP.TYPES.MODEL.LIST_ITEM.TYPE, x);
                 list.add(item);
@@ -17,7 +15,7 @@ const IOCConfig = {
         })
 
         $rootInjector.register($MAP.TYPES.MODEL.LIST_ITEM.TYPE, (...args)=>{
-            return new ListItem(...args);
+            return new ModelFactory().create($MAP.TYPES.MODEL.LIST_ITEM.TYPE, ...args);
         })
 
         $rootInjector.register($MAP.TYPES.VIEW.LIST.TYPE, (model)=>{
