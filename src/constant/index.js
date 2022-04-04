@@ -1,13 +1,26 @@
 export default {
-    MODEL_TYPES:{
-        LIST:{
-            TYPE:"list"
+    TYPES:{
+        MODEL:{
+            LIST:{
+                TYPE:"List"
+            },
+            LIST_ITEM:{
+                TYPE:"Listitem"
+            },
+            INFO:{
+                TYPE:"Info"
+            },
         },
-        LIST_ITEM:{
-            TYPE:"listitem"
-        },
-        INFO:{
-            TYPE:"info"
+        VIEW:{
+            LIST:{
+                TYPE:"LIST_VIEW"
+            },
+            LIST_ITEM:{
+                TYPE:"LIST_ITEM_VIEW"
+            },
+            INFO:{
+                TYPE:"INFO_VIEW"
+            }
         }
     },
     EVENT_KEY:{

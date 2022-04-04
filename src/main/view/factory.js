@@ -41,12 +41,12 @@ export default class ViewFactory{
     }
 }
 
-ViewFactory.prototype[$MAP.MODEL_TYPES.LIST.TYPE] = function(model){
+ViewFactory.prototype[$MAP.TYPES.VIEW.LIST.TYPE] = function(model){
     return this.createByType(ListPC, ListMobile, ListTablet, model);
 }
-ViewFactory.prototype[$MAP.MODEL_TYPES.LIST_ITEM.TYPE] = function(model){
+ViewFactory.prototype[$MAP.TYPES.VIEW.LIST_ITEM.TYPE] = function(model){
     return this.createByType(ListItemPC, ListItemMobile, ListItemTablet, model);
 }
-ViewFactory.prototype[$MAP.MODEL_TYPES.INFO.TYPE] = function(model){
+ViewFactory.prototype[$MAP.TYPES.VIEW.INFO.TYPE] = function(model){
     return this.createByType(InfoPC, InfoMobile, InfoTablet, model);
 }

@@ -21,14 +21,14 @@ class Engine{
     }
 
     initModel(data){
-        this._list = $Injector.use("List", data);
+        this._list = $Injector.use($MAP.TYPES.MODEL.LIST.TYPE, data);
         this._info = Services.getDefaultItem(this._list);
     }
 
     readyToRender(){
         Services.getData(this).then(()=>{
-            this._listView = $Injector.use("ListView", this._list);
-            this._infoView = $Injector.use("InfoView", this._info);
+            this._listView = $Injector.use($MAP.TYPES.VIEW.LIST.TYPE, this._list);
+            this._infoView = $Injector.use($MAP.TYPES.VIEW.INFO.TYPE, this._info);
 
             this._listView.init();
             this._infoView.init();
