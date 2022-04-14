@@ -22,7 +22,7 @@ config('production').forEach(component => {
             plugins: [
                 new MiniCssExtractPlugin({filename: `${item.terminal}.css`,chunkFilename: '[name].css'}),
                 new CleanWebpackPlugin(),
-                new CopyWebpackPlugin({patterns:[{from:path.join(__dirname,`../httl/${component.httlName}/${item.terminal}.httl`),to:''}]}),
+                new CopyWebpackPlugin({patterns:[{from:path.join(__dirname,`../httl/${item.terminal}.httl`),to:''}]}),
             ]
         })
         moduleList.push(moduleExports)

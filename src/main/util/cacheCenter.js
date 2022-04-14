@@ -1,23 +1,14 @@
 class CacheCenter{
     constructor(){
-        this._productData = {};
-        this._views = {};
+        this._rootContainer = null;
     }
 
-    getProductByPn(pn){
-        return this._productData[pn];
+    getRootContainer(){
+        return this._rootContainer;
     }
 
-    setProduct(pn, item){
-        this._productData[pn] = item;
-    }
-
-    getViewByType(type) {
-        return this._views[type];
-    }
-
-    setViewByType(type, view) {
-        this._views[type] = view;
+    setRootContainer(container){
+        this._rootContainer = container;
     }
 }
 

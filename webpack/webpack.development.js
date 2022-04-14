@@ -2,7 +2,6 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 const common = require('./webpack.common');
 const config = require('./config');
-const path = require("path");
 const SSICompileWebpackPlugin = require('ssi-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');

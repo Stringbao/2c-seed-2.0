@@ -4,8 +4,8 @@ import Services from "@services/index.js";
 import ViewFactory from "@view/factory";
 
 class Engine{
-    constructor(){
-        this._terminal  = ViewFactory.getTerminal();
+    constructor(_terminal){
+        this._terminal  = _terminal?_terminal:ViewFactory.getTerminal();
     }
 
     notify(){
@@ -16,7 +16,7 @@ class Engine{
     }
 
     init(rootContainer){
-        this._rootContainer = $(rootContainer);
+        $CACHE_CENTER.setRootContainer(rootContainer);
         this.readyToRender();
     }
 

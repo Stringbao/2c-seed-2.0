@@ -2,7 +2,7 @@
 class BaseView {
     constructor(model){
         this._model = model;
-        this._el = $(_demoEngine._rootContainer).find("div.list_container");
+        this._el = $CACHE_CENTER.getRootContainer().find("div.list_container");
         this._itemsViews = [];
     }
 

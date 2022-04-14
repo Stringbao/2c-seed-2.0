@@ -6,9 +6,8 @@
 // entry 本地运行项目的入口文件路径
 let componentList = [
     {
-        httlName: 'login',
-        library: 'login_pc',
-        componentName: 'ofp-Login',
+        library: 'Moto_Account_Entry',
+        componentName: 'moto-account-Login',
         list: [
             {terminal:'pc',chunksName: 'pc',entry: './src/dev/entry/pc.js'},
             {terminal:'tablet',chunksName: 'tablet',entry: './src/dev/entry/tablet.js'},

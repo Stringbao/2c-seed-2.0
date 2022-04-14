@@ -54,7 +54,7 @@ module.exports = {
             $API: [path.resolve(__dirname,'../src/main/api/index.js'), "default"],
             $DOM_EVENT_CENTER:[path.resolve(__dirname,'../src/main/util/domEventCenter.js'), "default"],
             $CACHE_CENTER:[path.resolve(__dirname,'../src/main/util/cacheCenter.js'), "default"],
-            $Injector:[path.resolve(__dirname,'../src/main/util/injector/config.js'), "default"],
+            $Injector:[path.resolve(__dirname,'../src/main/util/injector/config.js'), "default"]
         })
     ],
 }
