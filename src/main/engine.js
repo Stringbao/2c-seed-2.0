@@ -18,6 +18,7 @@ class Engine{
     init(rootContainer){
         $CACHE_CENTER.setRootContainer(rootContainer);
         this.readyToRender();
+        this.notify();
     }
 
     initModel(data){
@@ -32,8 +33,6 @@ class Engine{
 
             this._listView.init();
             this._infoView.init();
-            
-            this.notify();
         }).catch(err=>{
             console.log(err, "get data error");
         })
