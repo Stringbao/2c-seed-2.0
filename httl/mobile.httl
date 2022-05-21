@@ -1,0 +1,10 @@
+<!-- #set(JSONObject transData = getTransData(DataModels,lang)) -->
+
+<div class="account-myCart" compid='${componentId}' id="${componentUuid}" type="3" tag="component" componentName="configObject">
+    <main rolw="main" class="yourclass">
+        
+    </main>
+    <script>
+        leCartDetail.init($CONSTANT.TERMINAL.MOBILE, ${componentUuid}, ${transData});
+    </script>
+</div>
