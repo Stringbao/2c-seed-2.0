@@ -12,15 +12,19 @@
 					el: "#compId",
 					data() {
 						return {
+                            configData:{
 
+                            }
                         }
 					},
 					methods: {
 						getValue() {
-							return {}
+							return {
+                                configData:this.configData
+                            }
 						},
 						setValue(data) {
-
+                            data.configData && (this.configData = data.configData);
 						}
 					}
 				})
