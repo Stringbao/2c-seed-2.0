@@ -18,7 +18,7 @@ module.exports = merge(common,{
         watchContentBase: true,
         openPage:"./en/vue_pangoo/nec-fe-cms/debug.html",
         host:"t.gl.lenovouat.com",
-        port:9982,
+        port:9970,
         https:true,
         proxy: {
             "/api": {
