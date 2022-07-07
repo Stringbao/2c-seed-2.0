@@ -1,12 +1,12 @@
 <!-- #set(JSONObject transData = getTransData(DataModels,lang)) -->
 
-<div class="account-myCart" compid='${componentId}' id="${componentUuid}" type="3" tag="component" componentName="configObject">
-    <main rolw="main" class="yourclass">
+<div class="" compid='${componentId}' id="${componentUuid}" type="3" tag="component" componentName="configObject">
+    <div class="">
         <!-- #set(JSONObject configData = transData.configData) -->
         <!-- #if(configData) -->
             <p>${configData.name}</p>
         <!-- #end -->
-    </main>
+    </div>
     <script>
         //should be as the same as library in webpack/config.js
         leCartDetail.init($CONSTANT.TERMINAL.PC, ${componentUuid}, ${transData});

@@ -5,6 +5,7 @@ const config = require('./config');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 let moduleList = [];
 config('production').forEach(component => {
@@ -23,6 +24,14 @@ config('production').forEach(component => {
                 new MiniCssExtractPlugin({filename: `${item.terminal}.css`,chunkFilename: '[name].css'}),
                 new CleanWebpackPlugin(),
                 new CopyWebpackPlugin({patterns:[{from:path.join(__dirname,`../httl/${item.terminal}.httl`),to:''}]}),
+                new UglifyJsPlugin({
+                    uglifyOptions:{
+                        compress:{
+                            drop_console: true
+                        }
+                    }
+        
+                })
             ]
         })
         moduleList.push(moduleExports)

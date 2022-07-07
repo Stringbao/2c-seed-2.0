@@ -17,7 +17,7 @@ module.exports = merge(common,{
         watchContentBase: true,
         openPage:"./pc.html",
         host:"t.gl.lenovouat.com",
-        port:9983,
+        // port:9983,
         https:true
     },
     plugins:[
