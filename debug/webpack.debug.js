@@ -8,7 +8,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const processCommand = require("child_process");
-processCommand.exec("node ../webpack/publish.js",
+processCommand.exec("node ./webpack/publish.js",
     function (error, stdout) {
         if (error !== null) {
             console.log("exec error: " + error);
@@ -66,7 +66,7 @@ module.exports = merge(common, {
             ]
         }),
         new SSICompileWebpackPlugin({
-            remoteBasePath: "https://h1-ofp.lenovouat.com",
+            remoteBasePath: "https://j1-ofp.lenovouat.com",
             minify: false
         })
     ],
