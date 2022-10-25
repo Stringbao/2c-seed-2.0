@@ -1,38 +1,46 @@
 const merge = require('webpack-merge');
 const webpack = require('webpack');
-const path =require('path')
+const path = require('path')
 const common = require('../webpack/webpack.common');
 const config = require('../webpack/config');
 const SSICompileWebpackPlugin = require('ssi-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const processCommand = require("child_process");
+processCommand.exec("node ../webpack/publish.js",
+    function (error, stdout) {
+        if (error !== null) {
+            console.log("exec error: " + error);
+        }
+    }
+);
 
-module.exports = merge(common,{
-    mode:"development",
-    devtool:"cheap-module-eval-source-map",
+module.exports = merge(common, {
+    mode: "development",
+    devtool: "cheap-module-eval-source-map",
     entry: config('development'),
-    devServer:{
-        contentBase: ['httl', 'debug', 'confightml','src'],
-        hot:true,
+    devServer: {
+        contentBase: ['httl', 'debug', 'confightml', 'src'],
+        hot: true,
         watchContentBase: true,
-        openPage:"./en/vue_pangoo/nec-fe-cms/debug.html",
-        host:"t.gl.lenovouat.com",
+        openPage: "./en/vue_pangoo/nec-fe-cms/debug.html",
+        host: "t.gl.lenovouat.com",
         // port:9970,
-        https:true,
+        https: true,
         proxy: {
             "/api": {
-              target: "https://admin.gl.lenovouat.com/",
-              ws: true,
-              changeOrigin: true,
-              secure: false,
-              pathRewrite: {
-                "^/api": ""
-              }
+                target: "https://admin.gl.lenovouat.com/",
+                ws: true,
+                changeOrigin: true,
+                secure: false,
+                pathRewrite: {
+                    "^/api": ""
+                }
             }
         }
     },
-    plugins:[
+    plugins: [
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[name].css'
@@ -42,23 +50,23 @@ module.exports = merge(common,{
             template: "./debug/index.html",
             chunks: ['pc'],
             minify: false,
-            minify:false
+            minify: false
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new CopyWebpackPlugin( {
-            patterns:[ 
+        new CopyWebpackPlugin({
+            patterns: [
                 {
-                    from : path.join(__dirname,'../httl'),
-                    to : 'en/vue_pangoo/nec-fe-cms/httl'
+                    from: path.join(__dirname, '../httl'),
+                    to: 'en/vue_pangoo/nec-fe-cms/httl'
                 },
                 {
-                    from : path.join(__dirname,'../configHtml'),
-                    to : 'en/vue_pangoo/nec-fe-cms/configHtml'
+                    from: path.join(__dirname, '../configHtml'),
+                    to: 'en/vue_pangoo/nec-fe-cms/configHtml'
                 },
             ]
         }),
         new SSICompileWebpackPlugin({
-            remoteBasePath:"https://h1-ofp.lenovouat.com",
+            remoteBasePath: "https://h1-ofp.lenovouat.com",
             minify: false
         })
     ],
